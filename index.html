@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="fevicon.jpg" type="image/jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Temperature Converter</title>
+    <style>
+        .btn:hover{
+            transform:scale(1.05);
+           
+        }
+        .container:hover{
+            transform: scale(1.05);
+            transition:all .5s ease-in-out;
+        }
+        .bdy{
+            background-image: url('https://images.unsplash.com/photo-1549778399-f94fd24d4697?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YmVzdCUyMGJhY2tncm91bmR8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+    
+</head>
+<body class="bdy">
+    <section class="h-[100vh] w-[100vw] flex flex-col justify-center items-center">
+      
+        <form class="max-w-lg flex flex-col justify-evenly h-1/2 md:h-96 px-8 py-2 items-center border-solid  border-2 border-gray-600 rounded-lg  md:rounded-full shadow-lg shadow-yellow-400 bg-white container">
+            
+            <p class="text-lg md:text-xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 break-words"> <i class="fa-solid fa-temperature-half" id="icon" ></i> TEMPERATURE CONVERTER</p>
+            <div class="flex gap-x-5">
+                <div >
+                    <label for="val">Degrees:</label><br>
+                    <input type="number" id="val" placeholder="Enter temp."  class="rounded-sm w-28 text-black">
+                </div>
+                <div>
+                    <label for="tempType">Type:</label><br>
+                    <select name="tempType" class="rounded-sm w-28" id="tempType">
+                           
+                        <option value="cel" ><span>&#176;</span>Celsius</option>
+                        <option value="fah"><span>&#176;</span>Fahrenheit</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <div class="flex gap-x-1 mb-2 ">
+                    <p class="text-center mx-1">Result:</p>
+                <span id="output">0</span> 
+                </div>
+                
+                <button onclick="tempconvert(); return false" type="submit" class="border-2 rounded-md px-8 py-1 bg-blue-300 shadow-lg shadow-blue-500/50  hover:bg-black hover:text-white hover:ease-in-out duration-300 btn">Convert</button>
+                
+                <i onclick="refresh()" class="fa fa-refresh cursor-pointer mx-1" ></i>
+             </div>
+               
+        </form>
+      
+    </section>
+    <script src="index.js"></script>
+    <script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script>
+    
+    
+</body>
+</html>
